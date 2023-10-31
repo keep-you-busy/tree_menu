@@ -1,0 +1,7 @@
+{% load menu_tags %}
+<div id="menu-tree">
+    {% draw_menu menu_name request.path as context %}
+    {% with menu_items=context.menu_items parents=context.parents %}
+        {% include "menu/menu_item.html" %}
+    {% endwith %}
+</div>
